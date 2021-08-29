@@ -1,5 +1,14 @@
 import React from "react";
-
+import GlobalStyles from "./GlobalStyles";
+import {Navbar} from  './AppStyles';
 export default function App() {
-  return <div>Hello World!</div>;
+  return (
+    <>
+      <GlobalStyles />
+      <Navbar>
+      hello
+      </Navbar>
+
+    </>
+  );
 }
