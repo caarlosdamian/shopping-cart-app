@@ -53,3 +53,19 @@ export const EmptyCart = styled.div`
   transform: translate(-50, -50%);
   font-size: 24px;
 `;
+export const SideBarHeader = styled.div`
+  font-weight: 300;
+  font-size: 24px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 15px 0;
+  &.after{
+    content: '';
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #000000;
+  }
+`

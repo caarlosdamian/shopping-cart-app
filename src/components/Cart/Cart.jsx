@@ -1,16 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, {  useRef } from "react";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { Wrapper, Icon, CartCount, CartSideBar, EmptyCart } from "./Styles";
+import { Wrapper, Icon, CartCount, CartSideBar, EmptyCart,SideBarHeader } from "./Styles";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 const Cart = ({ setIsToggle, isToggle }) => {
-  const [count, setcount] = useState(0);
+
   const $sidebarRef = useRef();
+
+  useOnClickOutside($sidebarRef,()=>setIsToggle(false))
   return (
     <>
-      <Wrapper onClick={() => setIsToggle(!isToggle)}>
+      <Wrapper onClick={() => setIsToggle(true)}>
         <Icon icon={faShoppingCart} />
-        <CartCount>{count}</CartCount>
+        <CartCount>2</CartCount>
       </Wrapper>
       <CartSideBar ref={$sidebarRef} className={isToggle ? "expand" : "shrink"}>
+        <SideBarHeader>Shopping cart</SideBarHeader>
         <EmptyCart>Empty card</EmptyCart>
       </CartSideBar>
     </>
