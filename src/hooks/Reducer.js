@@ -14,9 +14,9 @@ const addProductToCart = (state, product) => {
 
   return { ...state, carts: copy };
 };
-const removeProductToCart = (state, product) => {
+const removeProductToCart = (state, productID) => {
   const copy = [...state.carts];
-  const curItemIndex = copy.findIndex((i) => i.product.id === product.id);
+  const curItemIndex = copy.findIndex((i) => i.product.id === productID);
 
   if (curItemIndex > 0) {
     const curItem = { ...copy[curItemIndex] };
